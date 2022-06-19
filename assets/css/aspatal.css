@@ -26,9 +26,140 @@ a {
   text-decoration: none;
   color: #2a2a2a;
 }
+a:hover, a:focus {
+  color: #10217d;
+}
 
-header {
-  display: block;
+::-moz-selection {
+  color: white;
+  background: #10217d;
+}
+
+::selection {
+  color: white;
+  background: #10217d;
+}
+
+header .aspatal-top-header .aspatal-address,
+header .aspatal-top-header .aspatal-email {
+  display: inline-block;
+  line-height: 2em;
+  margin-right: 25px;
+  font-size: 15px;
+}
+header .aspatal-top-header .aspatal-email a:hover {
+  color: #2a2a2a;
+}
+header .aspatal-top-header .cta-button button {
+  color: #10217d;
+  border-color: #10217d;
+}
+header .aspatal-top-header .cta-button button:hover, header .aspatal-top-header .cta-button button:focus {
+  background-color: #10217d;
+  color: white;
+}
+header .aspatal-main-header {
+  height: 85px;
+}
+header .aspatal-main-header .branding img {
+  width: 55px;
+  height: auto;
+}
+header .aspatal-main-header .nav-menu {
+  list-style: none;
+}
+header .aspatal-main-header .nav-menu li {
+  display: inline-block;
+  line-height: 55px;
+  margin: 0 14px;
+  font-size: 18px;
+}
+
+.aspatal-hero-slider .carousel-inner .carousel-item .carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(16, 33, 125);
+  background: linear-gradient(126deg, rgb(16, 33, 125) 0%, rgba(252, 191, 41, 0) 100%);
+  width: 100%;
+  height: 100%;
+}
+.aspatal-hero-slider .carousel-inner .carousel-item .carousel-caption {
+  top: 15%;
+  left: 10%;
+}
+.aspatal-hero-slider .carousel-inner .carousel-item .carousel-caption h5 {
+  font-size: 65px;
+  text-transform: capitalize;
+  font-weight: normal;
+}
+.aspatal-hero-slider .carousel-inner .carousel-item .carousel-caption p {
+  font-weight: 200;
+  font-size: 20px;
+}
+.aspatal-hero-slider .carousel-inner .carousel-item .carousel-caption button {
+  margin-top: 12%;
+  background-color: white;
+  border-color: white;
+}
+.aspatal-hero-slider .carousel-control-prev,
+.aspatal-hero-slider .carousel-control-next {
+  width: 10%;
+}
+
+.aspatal-business-hour .left-col h2 {
+  font-size: 45px;
+  font-weight: normal;
+  color: #10217d;
+}
+.aspatal-business-hour .right-col h4 {
+  font-weight: normal;
+  font-size: 28px;
+  color: #10217d;
+}
+.aspatal-business-hour .right-col table {
+  background-color: #d5dbff;
+  width: 80%;
+}
+.aspatal-business-hour .right-col table tr {
+  border-bottom: 1px solid #eff1ff;
+}
+.aspatal-business-hour .right-col table tr td {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.aspatal-business-hour .right-col button {
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  background-color: #10217d;
+  border-color: #10217d;
+}
+
+.aspatal-departments {
+  background-color: #eff1ff;
+}
+.aspatal-departments .section-header {
+  padding-bottom: 15px;
+}
+.aspatal-departments .section-header .col-right {
+  position: relative;
+}
+.aspatal-departments .section-header .col-right button {
+  background-color: #10217d;
+  border-color: #10217d;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.aspatal-departments .section-header .col-right button a {
+  color: white;
 }
 
 /*# sourceMappingURL=aspatal.css.map */

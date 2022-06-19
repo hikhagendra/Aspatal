@@ -18,33 +18,17 @@ add_action( 'admin_menu', 'aspatal_add_admin_page' );
 
 function aspatal_custom_settings() {
     // General Options
-    // register_setting( 'aspatal-settings-group', 'logo' );
-    // register_setting( 'aspatal-settings-group', 'brand_color' );
-    // register_setting( 'aspatal-settings-group', 'secondary_color' );
-    // register_setting( 'aspatal-settings-group', 'phone' );
-    // register_setting( 'aspatal-settings-group', 'email' );
-    // register_setting( 'aspatal-settings-group', 'address' );
-    // register_setting( 'aspatal-settings-group', 'youtube' );
-    // register_setting( 'aspatal-settings-group', 'facebook' );
-    // register_setting( 'aspatal-settings-group', 'instagram' );
-    // register_setting( 'aspatal-settings-group', 'tiktok' );
-    // register_setting( 'aspatal-settings-group', 'cta_btn_txt' );
-    // register_setting( 'aspatal-settings-group', 'cta_btn_url' );
+    register_setting( 'aspatal-settings-group', 'logo' );
+    register_setting( 'aspatal-settings-group', 'address' );
+    register_setting( 'aspatal-settings-group', 'email' );
+    register_setting( 'aspatal-settings-group', 'phone' );
 
-    // add_settings_section( 'aspatal-general-settings', null, 'aspatal_general_settings_callback', 'lama_aspatal' );
+    add_settings_section( 'aspatal-general-settings', null, 'aspatal_general_settings_callback', 'lama_aspatal' );
 
-    // add_settings_field( 'logo', 'Logo', 'aspatal_logo_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'brand-color', 'Brand Color', 'aspatal_brand_color_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'secondary-color', 'Secondary Color', 'aspatal_secondary_color_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'phone', 'Phone', 'aspatal_phone_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'email', 'Email', 'aspatal_email_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'address', 'Address', 'aspatal_address_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'youtube', 'YouTube', 'aspatal_youtube_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'facebook', 'Facebook', 'aspatal_facebook_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'instagram', 'Instagram', 'aspatal_instagram_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'tiktok', 'TikTok', 'aspatal_tiktok_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'cta-btn-txt', 'CTA Button Text', 'aspatal_cta_btn_txt_callback', 'lama_aspatal', 'aspatal-general-settings' );
-    // add_settings_field( 'cta-btn-url', 'CTA Button URL', 'aspatal_cta_btn_url_callback', 'lama_aspatal', 'aspatal-general-settings' );
+    add_settings_field( 'logo', 'Logo', 'aspatal_logo_callback', 'lama_aspatal', 'aspatal-general-settings' );
+    add_settings_field( 'address', 'Address', 'aspatal_address_callback', 'lama_aspatal', 'aspatal-general-settings' );
+    add_settings_field( 'email', 'Email', 'aspatal_email_callback', 'lama_aspatal', 'aspatal-general-settings' );
+    add_settings_field( 'phone', 'Phone', 'aspatal_phone_callback', 'lama_aspatal', 'aspatal-general-settings' );
 }
 
 // General Settings Functions
@@ -54,8 +38,14 @@ function aspatal_general_settings_callback() {
 
 function aspatal_logo_callback() {
     $logo = esc_attr(get_option( 'logo' ));
-    echo '<input type="button" class="button button-secondary" value="Upload Logo" id="upload-button" />
-          <input type="hidden" id="logo" name="logo" value="'.$logo.'"/><img width="100px" height="auto" src="'.$logo.'" alt="Logo" />';
+    $html = '<input type="button" class="button button-secondary" value="Upload Logo" id="upload-button" />
+    <input type="hidden" id="logo" name="logo" value="'.$logo.'"/>';
+
+    if ( $logo ) {
+        $html .= '<img width="auto" height="40px" src="'.$logo.'" alt="Logo" />';
+    }
+
+    echo $html;
 }
 
 function aspatal_brand_color_callback() {
@@ -70,7 +60,7 @@ function aspatal_secondary_color_callback() {
 
 function aspatal_phone_callback() {
     $phone = esc_attr( get_option( 'phone' ) );
-    echo '<input type="text" name="phone" value="'.$phone.'" placeholder="+977 98XXXX">';
+    echo '<input type="text" name="phone" value="'.$phone.'" placeholder="+977 98XXXX"><p class="description">Please enter with country code (e.g. +977 for Nepal).';
 }
 
 function aspatal_email_callback() {
