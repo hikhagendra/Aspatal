@@ -162,4 +162,104 @@ header .aspatal-main-header .nav-menu li {
   color: white;
 }
 
+.aspatal-services {
+  --bs-gutter-x: 0;
+}
+.aspatal-services .col-right {
+  color: #10217d;
+}
+.aspatal-services .col-right .section-title {
+  font-size: 50px;
+}
+.aspatal-services .col-right .services img {
+  width: 65%;
+  margin: 30px 0;
+}
+
+.aspatal-doctors {
+  background-color: #eff1ff;
+}
+.aspatal-doctors .ratio {
+  --bs-aspect-ratio: 125%;
+}
+.aspatal-doctors .section-header {
+  padding-bottom: 15px;
+}
+.aspatal-doctors .section-header .col-right {
+  position: relative;
+}
+.aspatal-doctors .section-header .col-right button {
+  background-color: #10217d;
+  border-color: #10217d;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.aspatal-doctors .section-header .col-right button a {
+  color: white;
+}
+
+.aspatal-footer .main-footer {
+  padding-bottom: 35px;
+}
+.aspatal-footer .main-footer .widget,
+.aspatal-footer .main-footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.aspatal-footer .main-footer .widget {
+  padding: 35px;
+}
+.aspatal-footer .main-footer .widget .widget-title {
+  font-weight: normal;
+}
+.aspatal-footer .main-footer .widget ul li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #c5c5c5;
+}
+.aspatal-footer .main-footer .widget ul li:last-child {
+  border-bottom: none;
+}
+.aspatal-footer .main-footer .footer-one img {
+  width: 100px;
+}
+.aspatal-footer .main-footer .footer-one .caption {
+  padding-top: 1em;
+  padding-right: 5em;
+}
+.aspatal-footer .main-footer .footer-one .contact-info {
+  line-height: 0.5em;
+  padding: 15px 0;
+}
+.aspatal-footer .main-footer .footer-one .social-links i {
+  background-color: #eff1ff;
+  padding: 3px 6px 1px;
+  font-size: 18px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+.aspatal-footer .bottom-footer {
+  padding: 15px 0;
+  border-top: 1px solid #dfdfdf;
+}
+.aspatal-footer .bottom-footer .copyright p {
+  margin: 0;
+}
+.aspatal-footer .bottom-footer .footer-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.aspatal-footer .bottom-footer .footer-menu ul li {
+  display: inline-block;
+  padding: 0 10px;
+  border-left: 1px solid #dfdfdf;
+}
+.aspatal-footer .bottom-footer .footer-menu ul li:first-child {
+  border-left: none;
+}
+
 /*# sourceMappingURL=aspatal.css.map */

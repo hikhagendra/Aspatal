@@ -66,8 +66,7 @@
                         wp_nav_menu( array(
                             'theme_location'    =>  'primary',
                             'container'         =>  false,
-                            'menu_class'        =>  'nav-menu',
-                            'walker'            =>  new Aspatal_Walker_Nav_Primary()
+                            'menu_class'        =>  'nav-menu'
                         ) );
                     ?>
                 </div>

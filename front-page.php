@@ -136,11 +136,154 @@ get_header(); ?>
 </div>
 
 <!-- Medical Services -->
-<div class="aspatal-services p-5 row">
-  <div class="col-left">
-    <img src="" alt="">
+<div class="aspatal-services px-5 pt-5 row">
+  <div class="col-5 col-left px-5">
+    <img src="<?php echo get_template_directory_uri() . '/assets/images/doctor-home.png'; ?>" class="w-100" alt="Doctor">
+  </div>
+  <div class="col-7 col-right">
+    <h3 class="section-title">Medical services</h3>
+    <p class="section-desc">Our healthcare professionals are dedicated to providing the best possible care for patients, and are supported by complete radiology and imaging services provided at Kalium.</p>
+    <div class="services">
+      <div class="row">
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/stethoscope.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Check ups</h5>
+                  <p class="card-text">Regular check-ups elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/first-aid-kit.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Medical Advices</h5>
+                  <p class="card-text">Need advices for your health, consult any of our doctors by visiting our clinic.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/emergency-call.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">24/7 Emergency</h5>
+                  <p class="card-text">We are available for you everyday throughout the year.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/stretcher.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">New Facilities</h5>
+                  <p class="card-text">Our clinic is equipped with new high technology facilities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/doctor.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Professional Doctors</h5>
+                  <p class="card-text">Kalium Clinic doctors are among the best doctors in their department.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card mb-3 border-0">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/wheelchair.png'; ?>" class="img-fluid rounded-start" alt="Service Icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Patient Care</h5>
+                  <p class="card-text">Our helpful staff takes care of each patient offering personal nurse.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- Hospital Departments -->
+<div class="aspatal-doctors p-5">
+  <div class="section-header row">
+    <div class="col-9 col-left">
+      <h2>Doctors</h2>
+      <p>Highly skilled doctors awarded and certified by the most famous medical research universities around the globe, experienced by the most complicated cases they are here to help our patients.</p>
+    </div>
+    <div class="col-3 col-right text-end">
+      <button class="btn btn-primary rounded-pill px-4">
+        <a href="<?php echo get_site_url(); ?>/doctor/">
+          All Doctors <i class="bi bi-chevron-double-right"></i>
+        </a>
+      </button>
+    </div>
+  </div>
+  <div class="row doctors-list">
+    <?php
+      $args =  array(
+        'post_type'       =>  'doctor',
+        'post_per_page'   =>  4
+      );
+      $loop = new WP_Query( $args );
+
+      if ( $loop->have_posts() ) :
+        while( $loop->have_posts() ) : $loop->the_post(); ?>
+          <div class="col-3">
+            <a href="<?php echo get_the_permalink(); ?>">
+              <div class="card">
+                <div class="ratio ratio-3x4">
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>" class="card-img-top">
+                </div>
+      
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo get_the_title(); ?></h5>
+                  <p class="card-text"><?php echo get_post_meta( get_the_ID(), '_doctor_position_value_key', true ); ?></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endwhile;
+      endif;
+    ?>
+    
+  </div>
+</div>
 
 <?php get_footer(); ?>

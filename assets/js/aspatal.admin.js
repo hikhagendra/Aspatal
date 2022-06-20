@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
   var mediaUploader;
 
-  $("#upload-button").on("click", function (e) {
+  $("#upload-logo").on("click", function (e) {
     e.preventDefault();
 
     if (mediaUploader) {

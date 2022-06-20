@@ -32,12 +32,12 @@ a {
 ::-moz-selection {
     color: white;
     background: $brand-color;
-  }
+}
   
-  ::selection {
+::selection {
     color: white;
     background: $brand-color;
-  }
+}
 
 // Header
 header {
@@ -90,6 +90,7 @@ header {
     }
 }
 
+// Home Page Hero Slider
 .aspatal-hero-slider {
     .carousel-inner {
         .carousel-item {
@@ -128,6 +129,7 @@ header {
     }
 }
 
+// Home Page Business Hour Section
 .aspatal-business-hour {
     .left-col {
         h2 {
@@ -167,6 +169,7 @@ header {
     }
 }
 
+// Home Page Departments List
 .aspatal-departments {
     background-color: $light-grey;
     .section-header {
@@ -188,6 +191,132 @@ header {
         }
     }
 }
+
+// Home Page Services Section
+.aspatal-services {
+    --bs-gutter-x: 0;
+    .col-right {
+        color: $brand-color;
+        .section-title {
+            font-size: 50px;
+        }
+        .services {
+            img {
+                width: 65%;
+                margin: 30px 0;
+            }
+        }
+    }
+}
+
+// Home Page Doctors List
+.aspatal-doctors {
+    .ratio {
+        --bs-aspect-ratio: 125%;
+    }
+    background-color: $light-grey;
+    .section-header {
+        padding-bottom: 15px;
+        .col-right {
+            position: relative;
+            button {
+                background-color: $brand-color;
+                border-color: $brand-color;
+                position: absolute;
+                right: 5%;
+                bottom: 20%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// Footer
+.aspatal-footer {
+    .main-footer {
+        padding-bottom: 35px;
+        .widget,
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .widget {
+            padding: 35px;
+            .widget-title {
+                font-weight: normal;
+            }
+            ul {
+                li {
+                    padding: 6px 0;
+                    border-bottom: 1px dotted #c5c5c5;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+        .footer-one {
+            img {
+                width: 100px;
+            }
+            .caption {
+                padding-top: 1em;
+                padding-right: 5em;
+            }
+            .contact-info {
+                line-height: 0.5em;
+                padding: 15px 0;
+            }
+            .social-links {
+                i {
+                    background-color: #eff1ff;
+                    padding: 3px 6px 1px;
+                    font-size: 18px;
+                    margin: 0 2px;
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        padding: 15px 0;
+        border-top: 1px solid #dfdfdf;
+        .copyright {
+            p {
+                margin: 0;
+            }
+        }
+        .footer-menu {
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    padding: 0 10px;
+                    border-left: 1px solid #dfdfdf;
+                    &:first-child {
+                        border-left: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
